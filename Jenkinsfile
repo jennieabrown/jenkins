@@ -1,22 +1,18 @@
 pipeline {
-agent any
-parameters {
-  booleanParam(name:'verbose',
-    defaultValue: true,
-    description: 'print work to console')
-  string(name: 'ucdApp'
-    defaultValue: 'WP-Publish',
-    description "UCD Application Name")
+environment {
+  ucdApp = ${APP}
 }
+agent any
+
 stages {
     stage('doBuildStuff') {
         steps {
-           echo "build it here"
+           echo "build it here for ${ucdApp}"
          }
     }
     stage('runUCD'){
       steps {
-        bat "ucd/showProps.cmd ${params.ucdApp}""
+        bat "ucd/showProps.cmd ${ucdApp}""
       }
     }
     stage('package'){
