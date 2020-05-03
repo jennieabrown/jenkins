@@ -2,10 +2,10 @@ pipeline {
 agent any
 parameters {
   booleanParam(name:'verbose',
-    defaultValue=true,
+    defaultValue: true,
     description: 'print work to console')
   string(name: 'ucdApp'
-    defaultValue='WP-Publish',
+    defaultValue: 'WP-Publish',
     description "UCD Application Name")
 }
 stages {
