@@ -1,6 +1,6 @@
 pipeline {
 environment {
-  ucdApp = ${APP}
+  ucdApp = "${APP}"
 }
 agent any
 
