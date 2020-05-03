@@ -12,7 +12,7 @@ stages {
     }
     stage('runUCD'){
       steps {
-        bat "ucd/showProps.cmd ${ucdApp}""
+        bat "ucd/showProps.cmd ${ucdApp}"
       }
     }
     stage('package'){
